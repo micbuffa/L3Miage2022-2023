@@ -1,4 +1,4 @@
-class Cookie {
+export default class Cookie {
   static urlsImagesNormales = [
     "./assets/images/Croissant@2x.png",
     "./assets/images/Cupcake@2x.png",
