@@ -64,6 +64,10 @@ export default class Cookie {
     c2.deselectionnee();
   }
 
+  cachee() {
+    this.htmlImage.classList.add("cookieCachee");
+  }
+
   /** renvoie la distance entre deux cookies */
   static distance(cookie1, cookie2) {
     let l1 = cookie1.ligne;

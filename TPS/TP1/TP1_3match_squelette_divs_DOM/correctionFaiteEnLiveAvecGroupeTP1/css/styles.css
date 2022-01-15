@@ -62,3 +62,12 @@
     filter: drop-shadow(4px 4px 4px #222);
 
 }
+
+.imgDragOver {
+    background-color: yellow;
+}
+
+.cookieCachee {
+    display:none;
+}
+

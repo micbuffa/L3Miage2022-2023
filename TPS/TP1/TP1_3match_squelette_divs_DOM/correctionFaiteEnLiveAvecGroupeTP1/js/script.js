@@ -15,4 +15,11 @@ function init() {
 
   grille = new Grille(9, 9);
   grille.showCookies();
+
+  let b = document.querySelector("#buttonTestAlignement");
+  b.onclick = () => {
+    let existeAlignement = grille.testAlignementDansTouteLaGrille();
+
+    console.log("Existe Alignement : " + existeAlignement)
+  }
 }
