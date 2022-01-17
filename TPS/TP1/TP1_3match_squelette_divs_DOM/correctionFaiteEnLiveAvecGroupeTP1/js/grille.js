@@ -12,14 +12,15 @@ export default class Grille {
     // le tableau des cookies
     this.cookies = create2DArray(l);
 
-    let existeAlignement = false;
-
+    //let existeAlignement = false;
+    this.remplirTableauDeCookies(6);
+    /*
     do {
       this.remplirTableauDeCookies(6);
       existeAlignement = this.testAlignementDansTouteLaGrille();
       console.log("ExisteAlignement : " + existeAlignement)
     } while(existeAlignement)
-    
+    */
   }
 
   /**
@@ -164,9 +165,9 @@ export default class Grille {
       let cookie3 = tabLigne[c + 2];
 
       if ((cookie1.type === cookie2.type) && (cookie2.type === cookie3.type)) {
-        cookie1.selectionnee();
-        cookie2.selectionnee();
-        cookie3.selectionnee();
+        cookie1.cachee();
+        cookie2.cachee();
+        cookie3.cachee();
         alignement = true;
       }
     }
@@ -191,9 +192,9 @@ export default class Grille {
       let cookie3 = this.cookies[l+2][colonne];
 
       if ((cookie1.type === cookie2.type) && (cookie2.type === cookie3.type)) {
-        cookie1.selectionnee();
-        cookie2.selectionnee();
-        cookie3.selectionnee();
+        cookie1.cachee();
+        cookie2.cachee();
+        cookie3.cachee();
         alignement = true;
       }
     }
