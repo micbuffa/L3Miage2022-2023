@@ -1,4 +1,4 @@
-export class Cookie {
+export default class Cookie {
   constructor(type, ligne, colonne, image) {
     this.type = type;
     this.ligne = ligne;
