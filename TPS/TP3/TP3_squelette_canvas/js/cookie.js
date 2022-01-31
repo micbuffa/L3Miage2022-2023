@@ -1,4 +1,7 @@
 export default class Cookie {
+  // pour pouvoir jouer des sons...
+  static assets;
+
   constructor(type, ligne, colonne, image) {
     this.type = type;
     this.ligne = ligne;

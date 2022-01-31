@@ -17,6 +17,10 @@ export default class Grille {
     this.hauteurLignes = canvasHauteur / l;
     // les images et les sons...
     this.assets = assetsLoaded;
+    // on a besoin de faire des sons dans les Cookies. On aurait certainement
+    // intérêt à faire une classe assetsManager qui serait importée par
+    // la classe Grille et par la classe Cookie...
+    Cookie.assets = assetsLoaded;
 
     // on passe en paramètre le nombre de cookies différents. 4 = facile, 5 = moyen,
     // 6 = difficile
