@@ -50,8 +50,9 @@ function afficherEcranChargement() {
 
 function startGame(assetsLoaded) {
  
-
   assets = assetsLoaded;
+
+  //assets.xmas.play();
 
   grille = new Grille(9, 9, canvasLargeur, canvasHauteur, assetsLoaded);
 
