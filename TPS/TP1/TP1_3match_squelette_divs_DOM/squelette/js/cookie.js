@@ -1,4 +1,9 @@
 export default class Cookie {
+  ligne=0;
+  colone=0;
+  type=0;
+  htmlImage=undefined;
+
   static urlsImagesNormales = [
     "./assets/images/Croissant@2x.png",
     "./assets/images/Cupcake@2x.png",
@@ -17,11 +22,32 @@ export default class Cookie {
   ];
 
   constructor(type, ligne, colonne) {
+    this.type = type;
+    this.ligne = ligne;
+    this.colonne = colonne;
+
+    const url = Cookie.urlsImagesNormales[type];
+
+    // On crée une image avec le DOM
+    let img = document.createElement("img");
+    img.src = url;
+    img.width = 80;
+    img.height = 80;
+    // pour pouvoir récupérer la ligne et la colonne
+    // quand on cliquera sur une image et donc à partir
+    // de cette ligne et colonne on pourra récupérer le cookie
+    img.dataset.ligne = ligne;
+    img.dataset.colonne = colonne;
+
+    this.htmlImage = img;
+    
+
     // A FAIRE
   }
 
   selectionnee() {
     // on change l'image et la classe CSS
+    
   }
 
   deselectionnee() {
