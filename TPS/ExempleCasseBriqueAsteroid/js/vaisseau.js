@@ -5,6 +5,7 @@ export default class Vaisseau {
         this.angle =0;
         this.v = 0;
         this.vitesseRotation = 0.2;
+        this.accelerationLineaire = 0.1;
     }
 
     init(x, y, v) {
@@ -41,15 +42,31 @@ export default class Vaisseau {
         this.angle -= this.vitesseRotation;
     }
 
-    deplacerDroite() {
-        this.x += this.vitesse;
+    tournerDroite() {
+        this.angle += this.vitesseRotation;
     }
 
-    deplacerHaut() {
-        this.y -= this.vitesse;
-    }
+    // Quand on sort de la zone on réapparait de l'autre côté
+    avance(largeurZone, hauteurZone) {
+        // on va se déplacer dans la direction
+        // correspondant à l'angle
+        this.x += this.v * Math.cos(this.angle-Math.PI/2);
+        this.y += this.v * Math.sin(this.angle-Math.PI/2);
 
-    deplacerBas() {
-        this.y += this.vitesse;
+        if(this.x > largeurZone) {
+            this.x = 0;
+        } else if (this.x < 0) {
+            this.x = largeurZone;
+        }
     }
+    accelere() {
+        if(this.v < 5) {
+            this.v += this.accelerationLineaire;
+        }
+    }
+    decellere() {
+        if(this.v > 0)
+            this.v -= this.accelerationLineaire;
+    }
+    
 }

@@ -29,6 +29,16 @@ function mainloop() {
     if (inputStates.gauche) {
         vaisseau.tournerGauche();
     }
+    if (inputStates.droite) {
+        vaisseau.tournerDroite();
+    }
+    if (inputStates.espace) {
+        vaisseau.accelere();
+    } else {
+        vaisseau.decellere();
+    }
+
+    vaisseau.avance(canvas.width, canvas.height);
     // 4 on appelle la fonction mainloop dans 16ms
     requestAnimationFrame(mainloop);
 }
